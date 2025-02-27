@@ -1,0 +1,16 @@
+<div>
+<div>
+    <div id="region" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {% comment %} <h5 class="text-3xl font-bold mb-4">Region</h5> {% endcomment %}
+        <!-- Nations will be loaded here -->
+        <select name="region" class="custom-select"
+                            hx-get="{% url 'subregion' %}"
+                            hx-trigger="change"
+                            hx-target="#subregion">
+            <option disabled selected="True">Region</option>
+            {% for i in region %}
+                <option value="{{i.pk}}">{{ i.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>

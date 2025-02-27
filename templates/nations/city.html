@@ -1,0 +1,16 @@
+<div>
+    {% comment %} <h5 class="text-3xl font-bold mb-4">City</h5> {% endcomment %}
+    <div id="city" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Nations will be loaded here -->
+        <select name="city" class="custom-select"
+                
+                hx-trigger="change"
+                hx-target="#index"
+                >
+            <option disabled selected="True">Select State first</option>
+            {% for i in city %}
+                <option value="{{i.pk}}">{{ i.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
